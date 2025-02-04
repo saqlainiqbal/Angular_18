@@ -4,6 +4,7 @@ import { DataBindingComponent } from './component/data-binding/data-binding.comp
 import { ListEmployeeComponent } from './component/list-employee/list-employee.component';
 import { StructuralDirComponent } from './component/directive/structural-dir/structural-dir.component';
 import { IfelseComponent } from './component/controlflow/ifelse/ifelse.component';
+import { ForSwitchComponent } from './component/controlflow/for-switch/for-switch.component';
 
 export const routes: Routes = [
     {
@@ -25,6 +26,10 @@ export const routes: Routes = [
     {
         path: 'if-else',
         component: IfelseComponent
-    }
+    },
+    {
+        path: 'for-switch',
+        component: ForSwitchComponent
+    },
 
 ];
