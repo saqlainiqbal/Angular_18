@@ -86,8 +86,15 @@
                     <tr>
                         <td> {{$index+1}}</td>
                         <td>  {{item.name}}</td>
-                        <td> </td>
-                        <td> </td>
+                        <td> {{item.city}}</td>
+                        <td>
+                            @if(item.isActive){
+                                <span class="bg-success">Active</span>
+                            }
+                            @else{
+                                <span class="bg-warning">De-Active</span>
+                            }
+                        </td>
                     </tr>
                 }
                
