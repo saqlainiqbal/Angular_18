@@ -3,6 +3,7 @@ import { AddEmployeeComponent } from './component/add-employee/add-employee.comp
 import { DataBindingComponent } from './component/data-binding/data-binding.component';
 import { ListEmployeeComponent } from './component/list-employee/list-employee.component';
 import { StructuralDirComponent } from './component/directive/structural-dir/structural-dir.component';
+import { IfelseComponent } from './component/controlflow/ifelse/ifelse.component';
 
 export const routes: Routes = [
     {
@@ -20,6 +21,10 @@ export const routes: Routes = [
     {
         path: 'Structural-dir',
         component: StructuralDirComponent
+    },
+    {
+        path: 'if-else',
+        component: IfelseComponent
     }
 
 ];
