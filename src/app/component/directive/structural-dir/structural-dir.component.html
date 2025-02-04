@@ -1,0 +1,53 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>Structural Directive</h1>
+    <p>*ngIf, *ngFor...</p>
+    <button class="btn btn-primary" >Go To Attribute</button>
+  </div>
+<div class="row pt-3">
+    <div class="col-3">
+        <div *ngIf = "isDiv1Visible" class="bg-danger p-3 text-center">
+           <h4>Div-1 </h4> 
+        </div>
+    </div>
+    <div class="col-3">
+        <div *ngIf="isDiv2Visible" class="bg-success p-3 text-center">
+            <h4>Div-2 </h4> 
+        </div>
+    </div> 
+    <div class="col-3">
+        <div *ngIf="num1 == num2" class="bg-secondary p-3 text-center">
+            <h4>Div-3 </h4> 
+        </div>
+    </div>
+    <div class="col-3">
+        <div  class="bg-primary p-3 text-center">
+            <h4>Div-4 </h4> 
+        </div>
+    </div>
+</div>
+<div class="row pt-3">
+    <div class="col-3 text-center">
+        <button class="btn btn-danger" (click)="hideDiv1()">Hide</button>
+        <button class="btn btn-primary mx-2" (click)="showDiv1()">Show</button>
+    </div>
+    <div class="col-3 text-center">
+        <button class="btn btn-success" (click)="toggleDiv2()">Toggle</button>
+    </div> 
+    <div class="col-3">
+          <div style="display: flex;align-items:center">
+            <input type="text" placeholder="Num-1" [(ngModel)] = "num1" class="width-50">
+            <input type="text"  placeholder="Num-2" [(ngModel)] = "num2" class="width-50">
+          </div>
+    </div>
+    <div class="col-3">
+        <div style="display: flex;align-items:center">
+            <input type="checkbox"  class="width-50">
+            <select >
+                <option value="">Select State</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="USA">USA</option>
+                <option value="India">Indian</option>
+            </select>
+          </div>
+    </div>
+</div>
