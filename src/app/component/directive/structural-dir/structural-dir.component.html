@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="col-3">
-        <div  class="bg-primary p-3 text-center">
+        <div *ngIf="isCheckBoxChecked" class="bg-primary p-3 text-center">
             <h4>Div-4 </h4> 
         </div>
     </div>
@@ -41,7 +41,7 @@
     </div>
     <div class="col-3">
         <div style="display: flex;align-items:center">
-            <input type="checkbox"  class="width-50">
+            <input type="checkbox" [(ngModel)] = "isCheckBoxChecked" class="width-50">
             <select >
                 <option value="">Select State</option>
                 <option value="Pakistan">Pakistan</option>
