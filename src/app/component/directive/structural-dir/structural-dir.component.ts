@@ -14,6 +14,7 @@ export class StructuralDirComponent {
   num1: string = '';
   num2: string = '';
   isCheckBoxChecked: boolean = true;
+  
 
   showDiv1(){
     this.isDiv1Visible = true;
