@@ -6,6 +6,8 @@ import { StructuralDirComponent } from './component/directive/structural-dir/str
 import { IfelseComponent } from './component/controlflow/ifelse/ifelse.component';
 import { ForSwitchComponent } from './component/controlflow/for-switch/for-switch.component';
 import { PipeComponent } from './component/pipe/pipe.component';
+import { ReactiveFormComponent } from './component/form/reactive-form/reactive-form.component';
+import { PostAPIComponent } from './component/post-api/post-api.component';
 
 export const routes: Routes = [
     {
@@ -35,6 +37,14 @@ export const routes: Routes = [
     {
         path: 'pipe',
         component: PipeComponent
+    },
+    {
+        path: 'reactive-form',
+        component: ReactiveFormComponent
+    },
+    {
+        path: 'post-api',
+        component: PostAPIComponent
     },
 
 ];
