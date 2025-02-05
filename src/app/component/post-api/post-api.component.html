@@ -23,18 +23,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @for(item of depatmentList ; track $index){
+                                    <tr>
+                                        <td>{{$index + 1}}</td>
+                                        <td> {{item.departmentName}}</td>
+                                        <td>{{item.departmentLogo}}</td>
+                                        
+                                        <td> 
+                                            <button class="btn btn-primary" >Edit</button>
+                                            <app-my-button  [btnClass]="'btn btn-danger'" [btnText]="'Delete'"></app-my-button>
+                                        </td>
+                                    </tr> 
+                                }
                                 
-                                <tr>
-                                    <td> </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td> 
-                                        <button class="btn btn-primary" >Edit</button>
-                                        <app-my-button  [btnClass]="'btn btn-danger'" [btnText]="'Delete'"></app-my-button>
-
-                                        <!-- <button class="btn btn-danger" (click)="onDelete(item.departmentId)">Delete</button> -->
-                                    </td>
-                                </tr>
                                 
 
                             </tbody>
@@ -48,24 +49,24 @@
     <div class="col-4">
         <div class="card">
             <div class="card-header bg-secondary text-white">
-                New Department
+                New Department -- Run on Port 4209 for New record.
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-12">
                         <label for="">Department Name</label>
-                        <input type="text" class="form-control"
+                        <input type="text" [(ngModel)]="departmentObj.departmentName" class="form-control"
                             placeholder="Enter Name">
                     </div>
                     <div class="col-12">
                         <label for="">Department Logo</label>
-                        <input type="text"  class="form-control"
+                        <input type="text" [(ngModel)]="departmentObj.departmentLogo" class="form-control"
                             placeholder="Enter Logo Url">
                     </div>
                 </div>
                 <div class="row pt-3">
                     <div class="col-6 text-center">
-                        <button class="btn btn-secondary">Reset</button>
+                        <button class="btn btn-secondary" (click)="onSubmit()">Save</button>
                     </div>
                     <div class="col-6 text-center"> 
                        
