@@ -5,6 +5,7 @@ import { ListEmployeeComponent } from './component/list-employee/list-employee.c
 import { StructuralDirComponent } from './component/directive/structural-dir/structural-dir.component';
 import { IfelseComponent } from './component/controlflow/ifelse/ifelse.component';
 import { ForSwitchComponent } from './component/controlflow/for-switch/for-switch.component';
+import { PipeComponent } from './component/pipe/pipe.component';
 
 export const routes: Routes = [
     {
@@ -30,6 +31,10 @@ export const routes: Routes = [
     {
         path: 'for-switch',
         component: ForSwitchComponent
+    },
+    {
+        path: 'pipe',
+        component: PipeComponent
     },
 
 ];
