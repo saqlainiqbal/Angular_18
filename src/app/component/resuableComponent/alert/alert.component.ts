@@ -15,7 +15,6 @@ export class AlertComponent implements OnChanges {
 
 
   ngOnChanges(changes: SimpleChanges): void {
-    debugger;
     console.log('ngOnChanges')
   }
 

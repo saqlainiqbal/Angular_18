@@ -40,11 +40,39 @@ export class PostAPIComponent implements OnInit {
       }
     })
   }
+  onUpdatedata(){
+    this.http.post('https://projectapi.gerasim.in/api/Complaint/UpdateDepartment', this.departmentObj).subscribe((response:any) => {
+      if(response.result){
+        alert("Department Updated Successfully.")
+        this.getParentDepartment();
+      }else{
+        alert(response.message);
+      }
+    })
+  }
+  onDelete(id : number){
+    debugger;
+  const isDelete = confirm("Are you sure You want to delete?");
+  if(isDelete){
+    this.http.delete("https://projectapi.gerasim.in/api/Complaint/DeletedepartmentBydepartmentId?departmentId=" +id).subscribe((res:any)=>{
+      debugger;
+      if(res.result){
+        alert("Department Deleted Successfully.")
+        this.getParentDepartment();
+      }else{
+        alert(res.message);
+      }
+    })
+  }
+  }
 
   getParentDepartment(){
     this.http.get('https://projectapi.gerasim.in/api/Complaint/GetParentDepartment').subscribe((res:any)=>{
       this.depatmentList = res.data;
     })
+  }
+  onUpdate(data : any){
+    this.departmentObj = data;
   }
   
 }
