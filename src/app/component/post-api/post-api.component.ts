@@ -3,6 +3,7 @@ import { AlertComponent } from '../resuableComponent/alert/alert.component';
 import { MyButtonComponent } from '../resuableComponent/my-button/my-button.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { DepartmentService } from '../../service/department.service';
 
 @Component({
   selector: 'app-post-api',
@@ -20,7 +21,7 @@ export class PostAPIComponent implements OnInit {
     this.getParentDepartment();
   }
 
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient , private departmentService: DepartmentService){
 
   }
  depatmentList : any[] = [];
@@ -31,7 +32,7 @@ export class PostAPIComponent implements OnInit {
   }
 
   onSubmit(){
-    this.http.post('https://projectapi.gerasim.in/api/Complaint/AddNewDepartment', this.departmentObj).subscribe((response:any) => {
+    this.departmentService.SaveNewDepartment(this.departmentObj).subscribe((response:any) => {
       if(response.result){
         alert("Department Created Successfully.")
         this.getParentDepartment();
@@ -41,7 +42,7 @@ export class PostAPIComponent implements OnInit {
     })
   }
   onUpdatedata(){
-    this.http.post('https://projectapi.gerasim.in/api/Complaint/UpdateDepartment', this.departmentObj).subscribe((response:any) => {
+    this.departmentService.updateDepartmentData(this.departmentObj).subscribe((response:any) => {
       if(response.result){
         alert("Department Updated Successfully.")
         this.getParentDepartment();
@@ -65,7 +66,7 @@ export class PostAPIComponent implements OnInit {
   }
 
   getParentDepartment(){
-    this.http.get('https://projectapi.gerasim.in/api/Complaint/GetParentDepartment').subscribe((res:any)=>{
+    this.departmentService.getAllDepartments().subscribe((res:any)=>{
       this.depatmentList = res.data;
     })
   }
