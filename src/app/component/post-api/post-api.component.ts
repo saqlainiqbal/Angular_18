@@ -51,11 +51,9 @@ export class PostAPIComponent implements OnInit {
     })
   }
   onDelete(id : number){
-    debugger;
   const isDelete = confirm("Are you sure You want to delete?");
   if(isDelete){
     this.http.delete("https://projectapi.gerasim.in/api/Complaint/DeletedepartmentBydepartmentId?departmentId=" +id).subscribe((res:any)=>{
-      debugger;
       if(res.result){
         alert("Department Deleted Successfully.")
         this.getParentDepartment();
