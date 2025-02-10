@@ -18,4 +18,7 @@ export class DepartmentService {
   updateDepartmentData(obj:any){
     return this.http.post(`${this.apiURL + 'UpdateDepartment'}`, obj);
   }
+  deleteDepartment(id : any){
+    return this.http.delete(`${this.apiURL + 'DeletedepartmentBydepartmentId?departmentId='}`, id)
+  }
 }

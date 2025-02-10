@@ -30,14 +30,10 @@
                                         <td>{{item.departmentLogo}}</td>
                                         <td> 
                                             <button class="btn btn-primary" (click)="onUpdate(item)">Edit</button>
-                                            <button class="btn btn-danger" (Click)="onDelete(item.departmentId)">Delete</button>
-                                            <!-- <app-my-button  [btnClass]="'btn btn-danger'" [btnText]="'Delete'" (Click)="onDelete(item.departmentId)"></app-my-button> -->
+                                            <app-my-button  [btnClass]="'btn btn-danger'" [btnText]="'Delete'" (onBtnClick)="onDelete(item.departmentId)"></app-my-button>
                                         </td>
                                     </tr> 
                                 }
-                                
-                                
-
                             </tbody>
                         </table>
                     </div>
